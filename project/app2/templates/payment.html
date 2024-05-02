@@ -1,153 +1,16 @@
 <!DOCTYPE html>
 <html>
-    {% load static %}
 <head>
-    <meta charset="utf-8" />
-    <title> payment</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="" href="{% static "css/bootstrap.css" %}" />
-
-  <!-- fonts style 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
--->
-  <!-- font awesome style -->
-  <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="{% static "css/style.css" %}" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="{% static "css/responsive.css" %}" rel="stylesheet" />
-
-    <link rel="stylesheet" type="text/css" href="{% static "static3/bootstrap/css/bootstrap.min.css" %}" />
-    <link rel="stylesheet" type="text/css" href="{% static "static3/font-awesome/css/font-awesome.min.css" %}" />
-
-    <script type="text/javascript" src="{% static "static3/js/jquery-1.10.2.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "static3/bootstrap/js/bootstrap.min.js" %}"></script>
+    <title>نموذج الدفع</title>
+   
 </head>
 <body>
-    
 
-        <div class="hero_area">
-          <!-- header section strats -->
-          <header class="header_section">
-            <div class="container-fluid">
-              <nav class="navbar navbar-expand-lg custom_nav-container ">
-                <a class="navbar-brand" href="index.html">
-                  <span>
-                    HandTime
-                  </span>
-                </a>
-      
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class=""> </span>
-                </button>
-      
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav  ">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="{% url 'fatora' %}">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'about' %}"> About</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'prodacct' %}">Products</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url "testimonial" %}">Testimonial</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url "contact" %}">Contact Us</a>
-                    </li>
-                  </ul>
-                  <div class="user_optio_box">
-                    <a href="">
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                    </a>
-                    <a href="{% url "view_cart" %}">
-                      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </div>
-              </nav>
-            </div>
-          </header>
-<div class="container">
-
-<div class="page-header">
-   <a href="{% url "pay" %}"> <h1>  Paiement when recieving  </h1> </a>
-</div>
-
-<!-- Credit Card Payment Form - START -->
-
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-md-4 col-md-offset-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="row">
-                        <h3 class="text-center">Payment Details</h3>
-                        <img class="img-responsive cc-img" src="https://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <form role="form">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label>CARD NUMBER</label>
-                                    <div class="input-group">
-                                        <input type="tel" class="form-control" placeholder="Valid Card Number" />
-                                        <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-7 col-md-7">
-                                <div class="form-group">
-                                    <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                    <input type="tel" class="form-control" placeholder="MM / YY" />
-                                </div>
-                            </div>
-                            <div class="col-xs-5 col-md-5 pull-right">
-                                <div class="form-group">
-                                    <label>CV CODE</label>
-                                    <input type="tel" class="form-control" placeholder="CVC" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label>CARD OWNER</label>
-                                    <input type="text" class="form-control" placeholder="Card Owner Names" />
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="panel-footer">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <button class="btn btn-warning btn-lg btn-block">Process payment</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    .cc-img {
-        margin: 0 auto;
-    }
-</style>
-<!-- Credit Card Payment Form - END -->
-
-</div>
-
+<form method='post'>
+  {% csrf_token %}
+<input type='text' >
+<input type='submit' >
+</form>
 </body>
 </html>
+
